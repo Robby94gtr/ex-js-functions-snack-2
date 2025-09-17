@@ -39,6 +39,8 @@ console.log(add3(9)) */
 
 // const quadrato = (a) => a * a;
 
+// CORREZIONE: altro modo per fare a * a = a ** 2 cioè a al quadrato
+
 // oppure
 
 /* function quadrato(a) { return a * a; }
@@ -81,14 +83,27 @@ Crea un generatore di funzioni creaTimer
 Scrivi una funzione creaTimer che accetta un tempo (in ms) e restituisce una nuova funzione che avvia un setTimeout per stampare "Tempo scaduto!".
 
 */
-/* 
-const creaTimer = (a) => {
-    return setTimeout (function(){
+
+/* const creaTimer = (a) => {
+    return setTimeout(() => {
         console.log("Tempo Scaduto");
     }, a);
 }
+creaTimer(3000); */
 
-console.log(creaTimer(3000)); */
+// CORREZIONE: Altra versione 
+
+/* function creatimer(tempo) {
+    return () => {
+        setTimeout(() => {
+            console.log('Tempo scaduto!');
+        }, tempo);
+    };
+};
+
+const timer3s = creatimer(3000);
+
+timer3s(); */
 
 /* Snack 5
 
@@ -135,8 +150,8 @@ Crea una funzione che ferma un timer dopo un certo tempo
 
 Scrivi una funzione eseguiEferma che accetta un messaggio, un tempo di avvio e un tempo di stop. Il messaggio deve essere stampato a intervalli regolari, ma si deve fermare dopo il tempo di stop.
 */
-/* 
-function eseguiEferma(messaggio, intervallo, tempoStop) {
+
+/* function eseguiEferma(messaggio, intervallo, tempoStop) {
     let contatore = 0;
 
         const timerId = setInterval(() => {
@@ -148,7 +163,7 @@ function eseguiEferma(messaggio, intervallo, tempoStop) {
     setTimeout(() => clearInterval(timerId), tempoStop)    
 }
 
-eseguiEferma("viva le tette", 1000, 5000); */
+eseguiEferma("Capolavoro", 1000, 5000); */
 
 /* Snack 8 (Bonus)
 
